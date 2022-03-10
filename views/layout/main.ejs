@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nodejs Passport Local</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+</head>
+
+<body>
+
+
+
+    <%if (signinMessage.length> 0) {%>
+        <div class="alert alert-danger">
+            <%= signinMessage %>
+        </div>
+        <% } %>
+            <%if (signupMessage.length> 0) {%>
+                <div class="alert alert-danger">
+                    <%= signupMessage %>
+                </div>
+                <% } %>
+
+ 
+
+                    <%- body %>
+
+
+
+
+</body>
+
+</html>
+
+<!--Explicacion en 1h:38 -->

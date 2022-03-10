@@ -1,0 +1,49 @@
+<!--Crear formulario-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <%- layout('layout/main') %>
+    <title>Registro</title>
+
+</head>
+<body>
+    <div class="fondoregistro2">
+    
+        <div class="login-box2">
+            <a href="index"><img src="img/favicon.png" class="avatar" alt="Avatar Image"></a>
+            <h1>Registro</h1>
+                <form action="/signup" method="POST">
+
+                    <!--Indica la ruta en el action, asi sabe donde enviar los datos-->
+                    <label for="nickname">Nickname</label>
+                    <input type="nickname" name="nickname" placeholder="Introduce un nickname">
+                    <label for="username">Correo</label>
+                    <input type="email" name="email" placeholder="Introduce el email">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" placeholder="Introduce una contraseña">
+                    <input type="Submit" value="Registrarse" > </button>
+                        
+                    <a href="signin">¿Ya tienes cuenta? Inicia sesión </a><br>
+                    <a href="index">Volver al inicio</a>
+                </form>
+     
+        </div>
+    
+    </div>
+
+</body>
+</html>

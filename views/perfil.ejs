@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+		<link rel="stylesheet" href="css/estilos.css">
+		<script src="js/jquery-3.5.1.slim.min.js"></script>
+		<script src="popper.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<title>Perfil</title>
+		<link rel="icon" type="image/png" href="img/favicon.png" >
+	</head>
+	
+	<body>
+		<header>
+			<div class="contenedor">
+				<a href="index"><img src="img/logo.png" alt=""></a>
+				
+					<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark">
+						
+						<button class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="menu">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item">
+									<a href="index" class="nav-link">Inicio</a>
+								</li>
+								<li class="nav-item">
+									<a href="subirvideos" class="nav-link">Subida de vídeos</a>
+								</li>
+								<li class="nav-item">
+									<a href="videos" class="nav-link">Vídeos</a>
+								</li>
+							    <li class="nav-item">
+								    <a href="nosotros" class="nav-link">Sobre Nosotros</a>
+							    </li>
+							    <li class="nav-item dropdown active">
+								    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="desplegable" href="perfil"><% if (user) { %> 
+										<%- user.nickname %> 
+									<% } else { %>
+										<p>Mi Perfil</p>
+									<% } %></a>
+                                    <div class="dropdown-menu">  
+										<a class="dropdown-item"  href ="logout">Cerrar Sesión</a>
+						
+
+                                    </a>
+									</div>
+							    </li>
+				
+							</ul>		
+						</div>
+					
+					</nav>
+			</div>
+		</header>
+
+        <div class="fondo5">
+            <div class="contenedor">
+                <h2 class="titulo">Bienvenido <%- user.nickname %></h2>
+                <p class="descripcion">
+                   Somos una página sin ánimo de lucro que pretende poner en contacto a distintos usuarios que compartan su contenido.
+                </p>
+				
+				<% for(var i = 0; i < videos.length; i++) { %>
+					<li><%= videos[i].title %></li>
+					
+				<% } %>
+
+            </div>
+
+    </body>
+</html>
