@@ -56,7 +56,7 @@ Para poder poner en marcha el servicio, se deberán realizar los siguientes paso
     sudo apt update
     sudo apt install nodejs
 
-En el caso de MacOS (con brew):
+En el caso de MacOS (con *Homebrew*):
  
     brew install node
 
