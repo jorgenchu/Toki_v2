@@ -72,29 +72,209 @@
 
     <div class="fondo">
         <div class="contenedor">
-            <h2 class="titulo">Sube un archivo</h2>
-            <p class="descripcion">
-                Sube aquí tus archivos para compartir con la comunidad.
+            <h2 class="titulo">Reserva tu sitio</h2>
+            <h3>Elige el aula y el sitio: <!--- class = "descripcion" -->
+            
+                <div style="width: 50;">
+                    <br>
+                    <img src="img/plano.jpg"></div><br>
+               
 
             <div class="col-md-4 my-2">
 
-                <form action="/subirvideos" method="POST" enctype="multipart/form-data">
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input type="file" name="video" class="form-control" required id="inputGroupFile02" accept="video/*">
-                            <label class="custom-file-label" for="inputGroupFile02"
-                                aria-describedby="inputGroupFileAddon02"></label>
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="text" name="title"  oninvalid="this.setCustomValidity('Escribe un título')" oninput="this.setCustomValidity('')" required placeholder="Title" class="form-control">
-                    </div>
+                <!-- action="/subirvideos"-->
+                <form action="https://labtel.ehu.eus/cgi-bin/echo.py" method="post" enctype="multipart/form-data">
 
-                    <div class="form-group mb-3">
-                        <textarea name="description" oninvalid="this.setCustomValidity('Escribe una descripción')" oninput="this.setCustomValidity('')" required class="form-control" placeholder="Descripcion"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-custom">
+                    <select name="tipo" style="width: 175px;">
+                        <option value="none">-</option>
+                        <option value="Aula1">Aula 1</option>
+                        <option value="Aula2">Aula 2</option>
+                        <option value="Aula3">Aula 3</option>
+                    </select> <br><br>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto1" id="inlineRadio1" value="1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto10" id="inlineRadio2" value="10">
+                        <label class="form-check-label" for="inlineRadio2">10</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto18" id="inlineRadio1" value="18">
+                        <label class="form-check-label" for="inlineRadio1">18</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto26" id="inlineRadio2" value="26">
+                        <label class="form-check-label" for="inlineRadio2">26</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto34" id="inlineRadio1" value="34">
+                        <label class="form-check-label" for="inlineRadio1">34</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto2" id="inlineRadio1" value="2">
+                        <label class="form-check-label" for="inlineRadio1">2</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto11" id="inlineRadio2" value="11">
+                        <label class="form-check-label" for="inlineRadio2">11</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto19" id="inlineRadio1" value="19">
+                        <label class="form-check-label" for="inlineRadio1">19</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto27" id="inlineRadio2" value="27">
+                        <label class="form-check-label" for="inlineRadio2">27</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto35" id="inlineRadio1" value="35">
+                        <label class="form-check-label" for="inlineRadio1">35</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto3" id="inlineRadio2" value="3">
+                        <label class="form-check-label" for="inlineRadio2">3</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto13" id="inlineRadio1" value="13">
+                        <label class="form-check-label" for="inlineRadio1">13</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto18" id="inlineRadio2" value="18">
+                        <label class="form-check-label" for="inlineRadio2">18</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto23" id="inlineRadio1" value="23">
+                        <label class="form-check-label" for="inlineRadio1">23</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto28" id="inlineRadio2" value="28">
+                        <label class="form-check-label" for="inlineRadio2">28</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto4" id="inlineRadio1" value="4">
+                        <label class="form-check-label" for="inlineRadio1">4</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto14" id="inlineRadio2" value="14">
+                        <label class="form-check-label" for="inlineRadio2">14</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto19" id="inlineRadio1" value="19">
+                        <label class="form-check-label" for="inlineRadio1">19</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto24" id="inlineRadio2" value="24">
+                        <label class="form-check-label" for="inlineRadio2">24</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto29" id="inlineRadio1" value="29">
+                        <label class="form-check-label" for="inlineRadio1">29</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto5" id="inlineRadio1" value="5">
+                        <label class="form-check-label" for="inlineRadio1">5</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto15" id="inlineRadio2" value="15">
+                        <label class="form-check-label" for="inlineRadio2">15</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto20" id="inlineRadio1" value="20">
+                        <label class="form-check-label" for="inlineRadio1">20</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto25" id="inlineRadio2" value="25">
+                        <label class="form-check-label" for="inlineRadio2">25</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto30" id="inlineRadio1" value="30">
+                        <label class="form-check-label" for="inlineRadio1">30</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto6" id="inlineRadio1" value="6">
+                        <label class="form-check-label" for="inlineRadio1">6</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto16" id="inlineRadio2" value="16">
+                        <label class="form-check-label" for="inlineRadio2">16</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto21" id="inlineRadio1" value="21">
+                        <label class="form-check-label" for="inlineRadio1">21</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto26" id="inlineRadio2" value="26">
+                        <label class="form-check-label" for="inlineRadio2">26</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto31" id="inlineRadio1" value="31">
+                        <label class="form-check-label" for="inlineRadio1">31</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto7" id="inlineRadio1" value="7">
+                        <label class="form-check-label" for="inlineRadio1">7</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto17" id="inlineRadio2" value="17">
+                        <label class="form-check-label" for="inlineRadio2">17</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto22" id="inlineRadio1" value="22">
+                        <label class="form-check-label" for="inlineRadio1">22</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto27" id="inlineRadio2" value="27">
+                        <label class="form-check-label" for="inlineRadio2">27</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto32" id="inlineRadio1" value="32">
+                        <label class="form-check-label" for="inlineRadio1">32</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto8" id="inlineRadio1" value="8">
+                        <label class="form-check-label" for="inlineRadio1">8</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto18" id="inlineRadio2" value="18">
+                        <label class="form-check-label" for="inlineRadio2">18</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto23" id="inlineRadio1" value="23">
+                        <label class="form-check-label" for="inlineRadio1">23</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto28" id="inlineRadio2" value="28">
+                        <label class="form-check-label" for="inlineRadio2">28</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto33" id="inlineRadio1" value="33">
+                        <label class="form-check-label" for="inlineRadio1">33</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto9" id="inlineRadio1" value="9">
+                        <label class="form-check-label" for="inlineRadio1">9</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto19" id="inlineRadio2" value="19">
+                        <label class="form-check-label" for="inlineRadio2">19</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto24" id="inlineRadio1" value="24">
+                        <label class="form-check-label" for="inlineRadio1">24</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto29" id="inlineRadio2" value="29">
+                        <label class="form-check-label" for="inlineRadio2">29</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="puesto34" id="inlineRadio1" value="34">
+                        <label class="form-check-label" for="inlineRadio1">34</label>
+                      </div>
+                      
+                    <div class="form-group"><br>
+                        <button type="submit" class="btn btn-reservar">
                             Reservar
                         </button>
                     </div>

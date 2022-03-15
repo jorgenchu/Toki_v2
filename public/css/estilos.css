@@ -170,6 +170,19 @@ header .contenedor {
 	
   }
 
+  .btn-reservar {
+	background: rgba(0,0,0, 0.5);
+	border: none;
+	border-radius: 0.31em;
+	padding: 0.93em 1.87em;
+	color: #fff;
+	margin-right: 1.25em;
+	cursor: pointer;
+	transition: .3s ease all;
+	font-size: 0.75em;
+	
+  }
+
   
 
   .login-box input[type="submit"]:hover {
@@ -631,4 +644,6 @@ header .contenedor {
 .footer .footer-cols {
 	grid-template-columns: repeat(2, 1fr);
 }
+
+
 
