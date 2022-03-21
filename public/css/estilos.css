@@ -645,5 +645,28 @@ header .contenedor {
 	grid-template-columns: repeat(2, 1fr);
 }
 
+#tabla-res{
+	font-size: 25px;
+	 /* margin: auto; */
+	text-align: center; 
+	background-color:rgba(0, 0, 0, .80);
+	width: 400px;
+	border-style: groove;
+	border-color: black;
+	border-width: 10px;
+}
+
+.boton-res-label{
+	font-size: 20px;
+	margin: auto;
+   /* text-align: center;  */
+}
+
+.boton-res-input{
+	font-size: 100px;
+	margin: auto;
+   text-align: center; 
+
+}
 
 
