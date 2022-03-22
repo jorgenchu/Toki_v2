@@ -668,5 +668,13 @@ header .contenedor {
    text-align: center; 
 
 }
+.table tbody tr:hover {
+	background-color: rgb(255, 255, 255);
+	cursor: pointer;
+  }
+  
+  .table tbody tr.selected {
+	background-color: red;
+  }
 
 
