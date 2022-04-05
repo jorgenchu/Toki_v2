@@ -1,6 +1,6 @@
 ## ¿QUE ES TOKI? 👇
 🇪🇸
-mongodb+srv://jorgenchu:@cluster0.dtktr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
 Toki es un proyecto colaborativo realizado por alumnos de la escuela de ingeniería de Bilbao, en el que se pretende desarrollar un portal web en el que los estudiantes puedan realizar reservas de sitios de estudio para no tener que perder tiempo en caso de no haber sitio disponible.
 
 🇬🇧
