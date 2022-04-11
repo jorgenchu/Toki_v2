@@ -3,50 +3,39 @@
 const express = require('express');
 const router = express.Router(); //este metodo devuelve un objeto en el que almacenamos las rutas del server
 const passport = require('passport');
-const multer = require('multer');
 const mimeTypes = require('mime-types'); //para el mime types
-
-
-const Video = require('../models/video');
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+const Reserva = require('../models/reserva');
 
 router.get('/', (req, res, next) => {
     res.render('index'); //como ya he cofigura do que use ejs y donde esta solo revisa el archivo index.ejs
 });
 
 
-router.get('/subirvideos', isAuthenticated, (req, res, next) => { //le enviamos a una ventana con el get
-    res.render('subirvideos');
+//router.get('/subirvideos', isAuthenticated, (req, res, next) => { //le enviamos a una ventana con el get
+  //  res.render('subirvideos');
+//});
+
+router.get('/subirvideos', (req, res, next) => { //le enviamos a una ventana con el get
+     res.render('subirvideos');
+  });
+
+router.post('/subirvideos', (req, res) => {
+    console.log('POST')
+    let reserva = new Reserva()
+    reserva.aula = req.body.aula; //lo que envias del formulario
+    reserva.sitio = req.body.sitio;
+
+    reserva.save((err, reservaStored) => {
+        if (err) res.status(500).send({message: `Error al salvar en la BD: ${err}`})
+
+        res.status(200).send({product: reservaStored})
+    })
+
+
+   // res.redirect('videos');
 });
-
-router.post('/subirvideos', async(req, res) => {
-    const video = new Video();
-    video.title = req.body.title; //lo que envias del formulario
-    video.description = req.body.description;
-    video.filename = req.file.filename;
-    video.path = '/videos/uploads/' + req.file.filename; //ruta del archivo dentro de subirvideos
-    video.mimetype = req.file.mimetype;
-    video.size = req.file.size;
-    video.user=req.user.id;
-
-    await video.save();
-
-    console.log(video);
-
-    res.redirect('videos');
-});
-
-
-router.get('/video/:id', (req, res) => {
-    res.send('video Profile');
-});
-
-
-
-router.get('/video/:id/delete', (req, res) => { //para borrar la imagen seria video/1/delete y borra video con id 1
-    res.send('Video deleted');
-});
-
-
 
 router.get('/signup', (req, res, next) => { //le enviamos a una ventana con el get
     res.render('signup');
@@ -86,9 +75,10 @@ router.post('/signin', passport.authenticate('local-signin', { //el servidor esc
 
 
 router.get('/perfil', isAuthenticated, async (req, res, next) => {
-    const videos = await Video.find({user: req.user.id}).lean().sort({date: 'desc'});
+    //const videos = await Video.find({user: req.user.id}).lean().sort({date: 'desc'});
 
-    res.render('perfil', {videos});
+    //res.render('perfil', {videos});
+    res.render('perfil');
 });
 
 

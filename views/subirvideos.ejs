@@ -97,13 +97,13 @@
                     
                     <h3 style="text-align: center;">Elige el aula y el sitio:</h3> <!--- class = "descripcion" -->
 
-                    <form action="https://labtel.ehu.eus/cgi-bin/echo.py" onsubmit="return validar()" method="post" enctype="multipart/form-data">
+                    <form action="/subirvideos" onsubmit="return validar()" method="post" enctype="multipart/form-data">
                      <center>
                       <select name="aula" id="aula" style="width: 125px;">
                         <option value="none">-</option>
-                        <option value="Aula1">Aula 1</option>
-                        <option value="Aula2">Aula 2</option>
-                        <option value="Aula3">Aula 3</option>
+                        <option value="1">Aula 1</option>
+                        <option value="2">Aula 2</option>
+                        <option value="3">Aula 3</option>
                       </select> <br><br>
                      </center>
                       
@@ -124,92 +124,92 @@
                         <tbody>
                           <tr>
                             <th scope="row">F1</th>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio1">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="1">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 1</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio2">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="2">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 2</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio3">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="3">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 3</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio4">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="4">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 4</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio5">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="5">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 5</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio6">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="6">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 6</label></td>
                           </tr>
                           <tr>
                             <th scope="row">F2</th>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 7">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="7">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 7</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 8">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="8">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 8</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 9">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="9">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 9</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 10">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="10">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 10</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 11">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="11">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 11</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 12">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="12">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 12</label></td>
                           </tr>
                           <tr>
                             <th scope="row">F3</th>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 13">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="13">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 13</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 14">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="14">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 14</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 15">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="15">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 15</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 16">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="16">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 16</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 17">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="17">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 17</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 18">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="18">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 18</label></td>
                           </tr>
                           <tr>
                             <th scope="row">F4</th>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 19">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="19">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 19</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 20">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="20">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 20</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 21">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="21">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 21</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 22">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="22">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 22</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 23">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="23">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 23</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 24">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="24">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 24</label></td>
                           </tr>
                           <tr>
                             <th scope="row">F5</th>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 25">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="25">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 25</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 26">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="26">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 26</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 27">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="27">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 27</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 28">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="28">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 28</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 29">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="29">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 29</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 30">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="30">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 30</label></td>
                           </tr>
                           <tr>
                             <th scope="row">F6</th>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 31">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="31">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 31</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 32">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="32">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 32</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 33">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="33">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 33</label></td>
-                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="sitio 34">
+                            <td><input class="form-check-input" type="radio" id="flexSwitchCheckDefault" name="sitio" value="34">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 34</label></td>
-                            <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sitio" value="sitio 35">
+                            <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sitio" value="35">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 35</label></td>
-                            <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sitio" value="sitio 36">
+                            <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sitio" value="36">
                             <label class="form-check-label" for="flexSwitchCheckDefault"> 36</label></td>
                           </tr>
                         </tbody>
