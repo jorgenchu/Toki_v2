@@ -1,10 +1,12 @@
 const { Int32 } = require('mongodb');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const user = require('./user');
 const Schema = mongoose.Schema
 
 const ReservaSchema = new Schema({
     aula: Number,
     sitio: Number,
+    user: String,
     reserved_at: { type: Date, default: Date.now() }
 });
 
