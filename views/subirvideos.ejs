@@ -19,15 +19,37 @@
 
     <script>
         function validar(){
+            var val_aula = true;
+            var val_sitio = false;
             var valido = true;
+            var i;
             var aula = document.getElementById("aula").value;
-
-            if(aula=="none"){
-                alert("Elija el Aula");
-                valido = false;
+  
+            if(aula == "none")
+                val_aula = false;
+                
+              for(i = 0; i<document.fsitios.sitio.length; i++){
+                if(document.fsitios.sitio[i].checked){
+                    val_sitio = true;
+                    break;
+                  }
                 }
+
+              if(!val_sitio && !val_aula){
+                alert("Elija el Aula y el Sitio!");
+                valido = false;
+              }else if(!val_aula){
+                alert("Elija el Aula!");
+                valido = false;
+              }else if(!val_sitio){
+                alert("Elija el Sitio!");
+                valido = false;
+              }
+
             return valido;
+
         }
+  
     </script>
 
 </head>
@@ -92,12 +114,10 @@
             
             
                 <div style="width: 50;">
-                    <br>
-                    
-                    
+                    <br> 
                     <h3 style="text-align: center;">Elige el aula y el sitio:</h3> <!--- class = "descripcion" -->
 
-                    <form action="/subirvideos" onsubmit="return validar()" method="post" enctype="multipart/form-data">
+                    <form action="/subirvideos" name="fsitios" onsubmit="return validar()" method="post" enctype="multipart/form-data">
                      <center>
                       <select name="aula" id="aula" style="width: 125px;">
                         <option value="none">-</option>
@@ -124,150 +144,295 @@
             </defs>
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g id="mapa-1" transform="translate(1.360000, 1.750000)">
-                    <g  id="Sitios" filter="url(#filter-l1nbvqofdo-1)" transform="translate(118.840000, 56.560000)">
+                    <g  id="Sitios"  transform="translate(118.840000, 56.560000)">
                         <g class="sitio28" id="28" transform="translate(1706.860000, 12.700000)">
                             <path d="M13.5,48.12 L13.5,6.75 C13.5,5.33 14.82,4.17 16.5,4.17 L57,4.17 C58.62,4.17 59.94,5.33 59.94,6.75 L59.94,48.12 C59.94,49.6 58.62,50.75 57,50.75 L16.5,50.75 C14.82,50.75 13.5,49.6 13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.55 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.55 6.72,1.2 L6.72,4.07 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.75 C0,5.33 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.33 13.44,6.75 L13.44,48.17 C13.44,49.6 12.12,50.75 10.44,50.75 L2.94,50.75 C1.32,50.75 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.87 L48.54,50.87 L48.54,53.67 C48.54,54.37 47.88,54.94 47.1,54.94 L8.16,54.94 C7.32,54.94 6.72,54.38 6.72,53.67 L6.72,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="24.94" y="32.99">28</tspan>
-                            </text>
+                           
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="28">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">28</tspan>
+                            </text> 
+
                         </g>
+                        
                         <g class="sitio27" id="27" transform="translate(1706.860000, 141.810000)">
                             <path d="M13.5,48.11 L13.5,6.75 C13.5,5.32 14.82,4.17 16.5,4.17 L57,4.17 C58.62,4.17 59.94,5.31 59.94,6.74 L59.94,48.1 C59.94,49.6 58.62,50.74 57,50.74 L16.5,50.74 C14.82,50.74 13.5,49.59 13.5,48.1 L13.5,48.11 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.54 6.72,1.2 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.18 L0,6.75 C0,5.32 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.31 13.44,6.74 L13.44,48.16 C13.44,49.58 12.12,50.73 10.44,50.73 L2.94,50.73 C1.32,50.73 0,49.58 0,48.15 L0,48.18 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.86 L48.54,50.86 L48.54,53.66 C48.54,54.38 47.88,54.93 47.1,54.93 L8.16,54.93 C7.32,54.93 6.72,54.38 6.72,53.67 L6.72,50.85 L6.72,50.86 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="22.94" y="33.88">27</tspan>
-                            </text>
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">  
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="27">
+                                        </div>  
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">27</tspan>
+                            </text> 
                         </g>
                         <g class="sitio26"id="26" transform="translate(1526.860000, 492.700000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.12 C59.94,49.6 58.62,50.76 57,50.76 L16.5,50.76 C14.82,50.76 13.5,49.6 13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.55 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.55 6.72,1.2 L6.72,4.07 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.33 13.44,6.77 L13.44,48.17 C13.44,49.6 12.12,50.77 10.44,50.77 L2.94,50.77 C1.32,50.77 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.87 L48.54,50.87 L48.54,53.67 C48.54,54.39 47.88,54.93 47.1,54.93 L8.16,54.93 C7.32,54.93 6.72,54.38 6.72,53.67 L6.72,50.87 L6.72,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="25.94" y="34.99">26</tspan>
-                            </text>
+
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="26">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">26</tspan>
+                            </text> 
                         </g>
                         <g class="sitio25"id="25" transform="translate(1526.860000, 767.160000)">
                             <path d="M13.5,48.13 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.12 C59.94,49.59 58.62,50.75 57,50.75 L16.5,50.75 C14.82,50.75 13.5,49.59 13.5,48.11 L13.5,48.13 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.54 6.72,1.2 L6.72,4.06 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.33 13.44,6.77 L13.44,48.17 C13.44,49.6 12.12,50.77 10.44,50.77 L2.94,50.77 C1.32,50.77 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.87 L48.54,50.87 L48.54,53.67 C48.54,54.39 47.88,54.94 47.1,54.94 L8.16,54.94 C7.32,54.94 6.72,54.4 6.72,53.68 L6.72,50.88 L6.72,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="25.94" y="34.53">25</tspan>
-                            </text>
+                         
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="25">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">25</tspan>
+                            </text> 
                         </g>
                         <g class="sitio24"id="24" transform="translate(1406.800000, 492.750000)">
                             <path d="M46.44,6.82 L46.44,48.17 C46.44,49.6 45.12,50.77 43.44,50.77 L2.94,50.77 C1.32,50.77 0,49.6 0,48.17 L0,6.81 C0,5.33 1.32,4.17 2.94,4.17 L43.44,4.17 C45.12,4.17 46.44,5.33 46.44,6.81 L46.44,6.82 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,50.87 L11.4,50.87 L11.4,53.73 C11.4,54.38 12.06,54.93 12.84,54.93 L51.78,54.93 C52.62,54.93 53.22,54.38 53.22,53.73 L53.22,50.86 L53.22,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M59.94,6.76 L59.94,48.16 C59.94,49.6 58.62,50.76 57,50.76 L49.5,50.76 C47.82,50.76 46.5,49.6 46.5,48.16 L46.5,6.76 C46.5,5.33 47.82,4.16 49.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,4.07 L11.4,4.07 L11.4,1.27 C11.4,0.54 12.06,-5.68434189e-14 12.84,-5.68434189e-14 L51.78,-5.68434189e-14 C52.62,-5.68434189e-14 53.22,0.55 53.22,1.26 L53.22,4.06 L53.22,4.07 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="10" y="34.94">24</tspan>
-                            </text>
+                                        
+                            <foreignObject x="8" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="24">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">24</tspan>
+                            </text> 
                         </g>
                         <g class="sitio23" id="23" transform="translate(1406.800000, 767.210000)">
                             <path d="M46.44,6.82 L46.44,48.18 C46.44,49.61 45.12,50.76 43.44,50.76 L2.94,50.76 C1.32,50.76 0,49.61 0,48.18 L0,6.82 C0,5.32 1.32,4.18 2.94,4.18 L43.44,4.18 C45.12,4.18 46.44,5.33 46.44,6.82 L46.44,6.82 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,50.88 L11.4,50.88 L11.4,53.73 C11.4,54.39 12.06,54.93 12.84,54.93 L51.78,54.93 C52.62,54.93 53.22,54.39 53.22,53.73 L53.22,50.87 L53.22,50.88 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M59.94,6.76 L59.94,48.18 C59.94,49.61 58.62,50.76 57,50.76 L49.5,50.76 C47.82,50.76 46.5,49.61 46.5,48.18 L46.5,6.76 C46.5,5.33 47.82,4.18 49.5,4.18 L57,4.18 C58.62,4.18 59.94,5.33 59.94,6.76 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,4.08 L11.4,4.08 L11.4,1.26 C11.4,0.56 12.06,0 12.84,0 L51.78,0 C52.62,0 53.22,0.55 53.22,1.26 L53.22,4.06 L53.22,4.08 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="11" y="34.48">23</tspan>
-                            </text>
+                                        
+                            <foreignObject x="8" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="23">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">23</tspan>
+                            </text> 
                         </g>
                         <g class="sitio22" id="22" transform="translate(1340.860000, 11.830000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.12 C59.94,49.6 58.62,50.76 57,50.76 L16.5,50.76 C14.82,50.76 13.5,49.6 13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.54 6.72,1.2 L6.72,4.06 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.16 L0,6.76 C0,5.33 1.32,4.16 2.94,4.16 L10.44,4.16 C12.12,4.16 13.44,5.33 13.44,6.76 L13.44,48.16 C13.44,49.6 12.12,50.76 10.44,50.76 L2.94,50.76 C1.32,50.76 0,49.6 0,48.16 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.86 L48.54,50.86 L48.54,53.66 C48.54,54.39 47.88,54.94 47.1,54.94 L8.16,54.94 C7.32,54.94 6.72,54.39 6.72,53.67 L6.72,50.86 L6.72,50.86 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text id="21" font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="23.94" y="34.86">22</tspan>
-                            </text>
+                                         
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="22">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">22</tspan>
+                            </text> 
                         </g>
                         <g class="sitio21" id="21" transform="translate(1340.860000, 144.830000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.12 C59.94,49.6 58.62,50.76 57,50.76 L16.5,50.76 C14.82,50.76 13.5,49.6 13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.54 6.72,1.2 L6.72,4.06 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.16 L0,6.76 C0,5.33 1.32,4.16 2.94,4.16 L10.44,4.16 C12.12,4.16 13.44,5.33 13.44,6.76 L13.44,48.16 C13.44,49.6 12.12,50.76 10.44,50.76 L2.94,50.76 C1.32,50.76 0,49.6 0,48.16 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.86 L48.54,50.86 L48.54,53.66 C48.54,54.39 47.88,54.94 47.1,54.94 L8.16,54.94 C7.32,54.94 6.72,54.39 6.72,53.67 L6.72,50.86 L6.72,50.86 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="23.94" y="34.86">21</tspan>
-                            </text>
+                                           
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="21">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">21</tspan>
+                            </text> 
                         </g>
                         <g class="sitio20" id="20" transform="translate(1186.860000, 498.090000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.12 C59.94,49.6 58.62,50.76 57,50.76 L16.5,50.76 C14.82,50.76 13.5,49.6 13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,5.68434189e-14 47.1,5.68434189e-14 L8.16,5.68434189e-14 C7.32,5.68434189e-14 6.72,0.54 6.72,1.2 L6.72,4.06 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.33 13.44,6.77 L13.44,48.17 C13.44,49.6 12.12,50.77 10.44,50.77 L2.94,50.77 C1.32,50.77 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.87 L48.54,50.87 L48.54,53.67 C48.54,54.39 47.88,54.94 47.1,54.94 L8.16,54.94 C7.32,54.94 6.72,54.39 6.72,53.67 L6.72,50.87 L6.72,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="25.94" y="34.6">20</tspan>
-                            </text>
+                                          
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="20">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">20</tspan>
+                            </text> 
                         </g>
                         <g class="sitio19" id="19" transform="translate(1186.860000, 767.160000)">
                             <path d="M13.5,48.13 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.12 C59.94,49.59 58.62,50.75 57,50.75 L16.5,50.75 C14.82,50.75 13.5,49.59 13.5,48.11 L13.5,48.13 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.54 6.72,1.2 L6.72,4.06 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.33 13.44,6.77 L13.44,48.17 C13.44,49.6 12.12,50.77 10.44,50.77 L2.94,50.77 C1.32,50.77 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.87 L48.54,50.87 L48.54,53.67 C48.54,54.39 47.88,54.94 47.1,54.94 L8.16,54.94 C7.32,54.94 6.72,54.4 6.72,53.68 L6.72,50.88 L6.72,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="25.94" y="34.53">19</tspan>
-                            </text>
+                                          
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="19">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">19</tspan>
+                            </text> 
                         </g>
                         <g class="sitio18" id="18" transform="translate(1046.800000, 498.210000)">
                             <path d="M46.44,6.82 L46.44,48.18 C46.44,49.61 45.12,50.76 43.44,50.76 L2.94,50.76 C1.32,50.76 0,49.61 0,48.18 L0,6.82 C0,5.32 1.32,4.18 2.94,4.18 L43.44,4.18 C45.12,4.18 46.44,5.33 46.44,6.82 L46.44,6.82 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,50.88 L11.4,50.88 L11.4,53.73 C11.4,54.39 12.06,54.93 12.84,54.93 L51.78,54.93 C52.62,54.93 53.22,54.39 53.22,53.73 L53.22,50.87 L53.22,50.88 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M59.94,6.76 L59.94,48.18 C59.94,49.61 58.62,50.76 57,50.76 L49.5,50.76 C47.82,50.76 46.5,49.61 46.5,48.18 L46.5,6.76 C46.5,5.33 47.82,4.18 49.5,4.18 L57,4.18 C58.62,4.18 59.94,5.33 59.94,6.76 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,4.08 L11.4,4.08 L11.4,1.26 C11.4,0.56 12.06,0 12.84,0 L51.78,0 C52.62,0 53.22,0.55 53.22,1.26 L53.22,4.06 L53.22,4.08 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="13" y="34.48">18</tspan>
-                            </text>
+                                                            
+                            <foreignObject x="8" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="18">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">18</tspan>
+                            </text> 
                         </g>
                         <g class="sitio17" id="17" transform="translate(1046.800000, 767.210000)">
                             <path d="M46.44,6.82 L46.44,48.18 C46.44,49.61 45.12,50.76 43.44,50.76 L2.94,50.76 C1.32,50.76 0,49.61 0,48.18 L0,6.82 C0,5.32 1.32,4.18 2.94,4.18 L43.44,4.18 C45.12,4.18 46.44,5.33 46.44,6.82 L46.44,6.82 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,50.88 L11.4,50.88 L11.4,53.73 C11.4,54.39 12.06,54.93 12.84,54.93 L51.78,54.93 C52.62,54.93 53.22,54.39 53.22,53.73 L53.22,50.87 L53.22,50.88 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M59.94,6.76 L59.94,48.18 C59.94,49.61 58.62,50.76 57,50.76 L49.5,50.76 C47.82,50.76 46.5,49.61 46.5,48.18 L46.5,6.76 C46.5,5.33 47.82,4.18 49.5,4.18 L57,4.18 C58.62,4.18 59.94,5.33 59.94,6.76 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,4.08 L11.4,4.08 L11.4,1.26 C11.4,0.56 12.06,0 12.84,0 L51.78,0 C52.62,0 53.22,0.55 53.22,1.26 L53.22,4.06 L53.22,4.08 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="20" y="34.48">17</tspan>
-                            </text>
+                                                             
+                            <foreignObject x="8" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="17">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">17</tspan>
+                            </text> 
                         </g>
                         <g class="sitio16" id="16" transform="translate(1006.860000, 12.700000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.11 C59.94,49.61 58.62,50.76 57,50.76 L16.5,50.76 C14.82,50.76 13.5,49.6 13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.55 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.55 6.72,1.2 L6.72,4.07 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.33 13.44,6.77 L13.44,48.17 C13.44,49.6 12.12,50.77 10.44,50.77 L2.94,50.77 C1.32,50.77 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.87 L48.54,50.87 L48.54,53.67 C48.54,54.37 47.88,54.93 47.1,54.93 L8.16,54.93 C7.32,54.93 6.72,54.38 6.72,53.67 L6.72,50.87 L6.72,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="23.94" y="28.99">16</tspan>
-                            </text>
+                                                             
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="16">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">16</tspan>
+                            </text> 
                         </g>
                         <g class="sitio15" id="15" transform="translate(1006.860000, 140.830000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.12 C59.94,49.6 58.62,50.76 57,50.76 L16.5,50.76 C14.82,50.76 13.5,49.6 13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.54 6.72,1.2 L6.72,4.06 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.16 L0,6.76 C0,5.33 1.32,4.16 2.94,4.16 L10.44,4.16 C12.12,4.16 13.44,5.33 13.44,6.76 L13.44,48.16 C13.44,49.6 12.12,50.76 10.44,50.76 L2.94,50.76 C1.32,50.76 0,49.6 0,48.16 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.86 L48.54,50.86 L48.54,53.66 C48.54,54.39 47.88,54.94 47.1,54.94 L8.16,54.94 C7.32,54.94 6.72,54.39 6.72,53.67 L6.72,50.86 L6.72,50.86 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="23.94" y="34.86">15</tspan>
-                            </text>
+                                                            
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="15">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">15</tspan>
+                            </text> 
                         </g>
                         <g class="sitio14" id="14" transform="translate(836.860000, 498.090000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.12 C59.94,49.6 58.62,50.76 57,50.76 L16.5,50.76 C14.82,50.76 13.5,49.6 13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,5.68434189e-14 47.1,5.68434189e-14 L8.16,5.68434189e-14 C7.32,5.68434189e-14 6.72,0.54 6.72,1.2 L6.72,4.06 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.33 13.44,6.77 L13.44,48.17 C13.44,49.6 12.12,50.77 10.44,50.77 L2.94,50.77 C1.32,50.77 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.87 L48.54,50.87 L48.54,53.67 C48.54,54.39 47.88,54.94 47.1,54.94 L8.16,54.94 C7.32,54.94 6.72,54.39 6.72,53.67 L6.72,50.87 L6.72,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="23.94" y="34.6">14</tspan>
-                            </text>
+                                                             
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="14">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">14</tspan>
+                            </text> 
                         </g>
                         <g class="sitio13" id="13" transform="translate(836.860000, 767.160000)">
                             <path d="M13.5,48.13 L13.5,6.76 C13.5,5.33 14.82,4.16 16.5,4.16 L57,4.16 C58.62,4.16 59.94,5.33 59.94,6.76 L59.94,48.12 C59.94,49.59 58.62,50.75 57,50.75 L16.5,50.75 C14.82,50.75 13.5,49.59 13.5,48.11 L13.5,48.13 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.54 6.72,1.2 L6.72,4.06 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.33 13.44,6.77 L13.44,48.17 C13.44,49.6 12.12,50.77 10.44,50.77 L2.94,50.77 C1.32,50.77 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.87 L48.54,50.87 L48.54,53.67 C48.54,54.39 47.88,54.94 47.1,54.94 L8.16,54.94 C7.32,54.94 6.72,54.4 6.72,53.68 L6.72,50.88 L6.72,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="23.94" y="34.53">13</tspan>
-                            </text>
+                                                             
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="13">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">13</tspan>
+                            </text> 
                         </g>
                        
                         <g class="sitio12" id="12" transform="translate(699.800000, 497.210000)">
@@ -275,113 +440,221 @@
                             <path d="M53.22,50.88 L11.4,50.88 L11.4,53.73 C11.4,54.39 12.06,54.93 12.84,54.93 L51.78,54.93 C52.62,54.93 53.22,54.39 53.22,53.73 L53.22,50.87 L53.22,50.88 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M59.94,6.76 L59.94,48.18 C59.94,49.61 58.62,50.76 57,50.76 L49.5,50.76 C47.82,50.76 46.5,49.61 46.5,48.18 L46.5,6.76 C46.5,5.33 47.82,4.18 49.5,4.18 L57,4.18 C58.62,4.18 59.94,5.33 59.94,6.76 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,4.08 L11.4,4.08 L11.4,1.26 C11.4,0.56 12.06,0 12.84,0 L51.78,0 C52.62,0 53.22,0.55 53.22,1.26 L53.22,4.06 L53.22,4.08 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="13" y="34.48">12</tspan>
-                            </text>
+                                                            
+                            <foreignObject x="8" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="12">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">12</tspan>
+                            </text> 
                         </g>
                         <g class="sitio11" id="11" transform="translate(693.800000, 767.210000)">
                             <path d="M46.44,6.82 L46.44,48.18 C46.44,49.61 45.12,50.76 43.44,50.76 L2.94,50.76 C1.32,50.76 0,49.61 0,48.18 L0,6.82 C0,5.32 1.32,4.18 2.94,4.18 L43.44,4.18 C45.12,4.18 46.44,5.33 46.44,6.82 L46.44,6.82 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,50.88 L11.4,50.88 L11.4,53.73 C11.4,54.39 12.06,54.93 12.84,54.93 L51.78,54.93 C52.62,54.93 53.22,54.39 53.22,53.73 L53.22,50.87 L53.22,50.88 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M59.94,6.76 L59.94,48.18 C59.94,49.61 58.62,50.76 57,50.76 L49.5,50.76 C47.82,50.76 46.5,49.61 46.5,48.18 L46.5,6.76 C46.5,5.33 47.82,4.18 49.5,4.18 L57,4.18 C58.62,4.18 59.94,5.33 59.94,6.76 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,4.08 L11.4,4.08 L11.4,1.26 C11.4,0.56 12.06,0 12.84,0 L51.78,0 C52.62,0 53.22,0.55 53.22,1.26 L53.22,4.06 L53.22,4.08 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="13" y="34.48">11</tspan>
-                            </text>
+                                                            
+                            <foreignObject x="8" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="11">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">11</tspan>
+                            </text> 
                         </g>
                         <g class="sitio10" id="10" transform="translate(621.100000, 12.700000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.83,4.16 16.5,4.16 L57,4.16 C58.63,4.16 59.95,5.33 59.95,6.76 L59.95,48.11 C59.95,49.61 58.63,50.76 57.01,50.76 L16.51,50.76 C14.84,50.76 13.51,49.6 13.51,48.12 L13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,4.06 L48.55,4.06 L48.55,1.2 C48.55,0.55 47.89,0 47.11,0 L8.18,0 C7.34,0 6.74,0.55 6.74,1.2 L6.74,4.07 L6.73,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.33,4.17 2.95,4.17 L10.45,4.17 C12.13,4.17 13.45,5.33 13.45,6.77 L13.45,48.17 C13.45,49.6 12.13,50.77 10.45,50.77 L2.95,50.77 C1.33,50.77 0.01,49.6 0.01,48.17 L0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,50.87 L48.55,50.87 L48.55,53.67 C48.55,54.37 47.89,54.93 47.11,54.93 L8.18,54.93 C7.34,54.93 6.74,54.38 6.74,53.67 L6.74,50.87 L6.73,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="22.7" y="34.99">10</tspan>
-                            </text>
+                                                             
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="10">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">10</tspan>
+                            </text> 
                         </g>
                         <g class="sitio9" id="9" opacity="0.900000036" transform="translate(621.100000, 146.460000)">
                             <path d="M13.5,48.11 L13.5,6.75 C13.5,5.32 14.83,4.17 16.5,4.17 L57,4.17 C58.63,4.17 59.95,5.32 59.95,6.75 L59.95,48.11 C59.95,49.61 58.63,50.75 57.01,50.75 L16.51,50.75 C14.84,50.75 13.51,49.6 13.51,48.11 L13.5,48.11 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,4.06 L48.55,4.06 L48.55,1.2 C48.55,0.54 47.89,0 47.11,0 L8.18,0 C7.34,0 6.74,0.54 6.74,1.2 L6.74,4.06 L6.73,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.75 C0,5.32 1.33,4.17 2.95,4.17 L10.45,4.17 C12.13,4.17 13.45,5.32 13.45,6.75 L13.45,48.17 C13.45,49.6 12.13,50.75 10.45,50.75 L2.95,50.75 C1.33,50.75 0.01,49.6 0.01,48.17 L0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,50.86 L48.55,50.86 L48.55,53.66 C48.55,54.38 47.89,54.93 47.11,54.93 L8.18,54.93 C7.34,54.93 6.74,54.38 6.74,53.67 L6.74,50.87 L6.73,50.86 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="29.7" y="34.23">9</tspan>
-                            </text>
+                                                            
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="9">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">9</tspan>
+                            </text> 
                         </g>
                         <g class="sitio8" id="8" transform="translate(470.100000, 498.090000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.83,4.16 16.5,4.16 L57,4.16 C58.63,4.16 59.95,5.33 59.95,6.76 L59.95,48.12 C59.95,49.6 58.63,50.76 57.01,50.76 L16.51,50.76 C14.84,50.76 13.51,49.6 13.51,48.12 L13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,4.06 L48.55,4.06 L48.55,1.2 C48.55,0.54 47.89,5.68434189e-14 47.11,5.68434189e-14 L8.18,5.68434189e-14 C7.34,5.68434189e-14 6.74,0.54 6.74,1.2 L6.74,4.06 L6.73,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.33,4.17 2.95,4.17 L10.45,4.17 C12.13,4.17 13.45,5.33 13.45,6.77 L13.45,48.17 C13.45,49.6 12.13,50.77 10.45,50.77 L2.95,50.77 C1.33,50.77 0.01,49.6 0.01,48.17 L0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,50.87 L48.55,50.87 L48.55,53.67 C48.55,54.39 47.89,54.94 47.11,54.94 L8.18,54.94 C7.34,54.94 6.74,54.39 6.74,53.67 L6.74,50.87 L6.73,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="25.7" y="34.6">8</tspan>
-                            </text>
+                                                                             
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="8">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">8</tspan>
+                            </text> 
                         </g>
                         <g class="sitio7" id="7" transform="translate(470.100000, 767.160000)">
                             <path d="M13.5,48.13 L13.5,6.76 C13.5,5.33 14.83,4.16 16.5,4.16 L57,4.16 C58.63,4.16 59.95,5.33 59.95,6.76 L59.95,48.12 C59.95,49.59 58.63,50.75 57.01,50.75 L16.51,50.75 C14.84,50.75 13.51,49.59 13.51,48.11 L13.5,48.13 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,4.06 L48.55,4.06 L48.55,1.2 C48.55,0.54 47.89,0 47.11,0 L8.18,0 C7.34,0 6.74,0.54 6.74,1.2 L6.74,4.06 L6.73,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.33,4.17 2.95,4.17 L10.45,4.17 C12.13,4.17 13.45,5.33 13.45,6.77 L13.45,48.17 C13.45,49.6 12.13,50.77 10.45,50.77 L2.95,50.77 C1.33,50.77 0.01,49.6 0.01,48.17 L0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,50.87 L48.55,50.87 L48.55,53.67 C48.55,54.39 47.89,54.94 47.11,54.94 L8.18,54.94 C7.34,54.94 6.74,54.4 6.74,53.68 L6.74,50.88 L6.73,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="31.7" y="34.53">7</tspan>
-                            </text>
+                                                                             
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="7">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">7</tspan>
+                            </text> 
                         </g>
                         <g class="sitio6" id="6" transform="translate(279.380000, 0.000000)">
                             <path d="M13.5,48.11 L13.5,6.75 C13.5,5.32 14.82,4.17 16.5,4.17 L57,4.17 C58.62,4.17 59.94,5.32 59.94,6.75 L59.94,48.11 C59.94,49.61 58.62,50.75 57,50.75 L16.5,50.75 C14.82,50.75 13.5,49.6 13.5,48.11 L13.5,48.11 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.55 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.55 6.72,1.2 L6.72,4.07 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.75 C0,5.32 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.32 13.44,6.75 L13.44,48.17 C13.44,49.6 12.12,50.75 10.44,50.75 L2.94,50.75 C1.32,50.75 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.86 L48.54,50.86 L48.54,53.66 C48.54,54.38 47.88,54.93 47.1,54.93 L8.16,54.93 C7.32,54.93 6.72,54.38 6.72,53.67 L6.72,50.87 L6.72,50.86 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="29.42" y="36.69">6</tspan>
-                            </text>
+                                                                              
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="6">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">6</tspan>
+                            </text> 
                         </g>
                         <g class="sitio5" id="5" transform="translate(279.380000, 146.460000)">
                             <path d="M13.5,48.11 L13.5,6.75 C13.5,5.32 14.82,4.17 16.5,4.17 L57,4.17 C58.62,4.17 59.94,5.32 59.94,6.75 L59.94,48.11 C59.94,49.61 58.62,50.75 57,50.75 L16.5,50.75 C14.82,50.75 13.5,49.6 13.5,48.11 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,4.06 L48.54,4.06 L48.54,1.2 C48.54,0.54 47.88,0 47.1,0 L8.16,0 C7.32,0 6.72,0.54 6.72,1.2 L6.72,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.75 C0,5.32 1.32,4.17 2.94,4.17 L10.44,4.17 C12.12,4.17 13.44,5.32 13.44,6.75 L13.44,48.17 C13.44,49.6 12.12,50.75 10.44,50.75 L2.94,50.75 C1.32,50.75 0,49.6 0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.72,50.86 L48.54,50.86 L48.54,53.66 C48.54,54.38 47.88,54.93 47.1,54.93 L8.16,54.93 C7.32,54.93 6.72,54.38 6.72,53.67 L6.72,50.87 L6.72,50.86 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="29.42" y="34.23">5</tspan>
-                            </text>
+                                                                            
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="5">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">5</tspan>
+                            </text> 
                         </g>
                         <g class="sitio4" id="4" transform="translate(246.800000, 497.540000)">
                             <path d="M46.44,6.82 L46.44,48.18 C46.44,49.61 45.12,50.76 43.44,50.76 L2.94,50.76 C1.32,50.76 0,49.62 0,48.19 L0,6.83 C0,5.33 1.32,4.19 2.94,4.19 L43.44,4.19 C45.12,4.19 46.44,5.34 46.44,6.83 L46.44,6.82 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,50.87 L11.4,50.87 L11.4,53.73 C11.4,54.39 12.06,54.93 12.84,54.93 L51.78,54.93 C52.62,54.93 53.22,54.39 53.22,53.73 L53.22,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M59.94,6.75 L59.94,48.18 C59.94,49.61 58.62,50.76 57,50.76 L49.5,50.76 C47.82,50.76 46.5,49.62 46.5,48.19 L46.5,6.75 C46.5,5.33 47.82,4.18 49.5,4.18 L57,4.18 C58.62,4.18 59.94,5.33 59.94,6.76 L59.94,6.75 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,4.07 L11.4,4.07 L11.4,1.27 C11.4,0.55 12.06,-5.68434189e-14 12.84,-5.68434189e-14 L51.78,-5.68434189e-14 C52.62,-5.68434189e-14 53.22,0.55 53.22,1.26 L53.22,4.08 L53.22,4.07 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="23" y="30.15">4</tspan>
-                            </text>
+                                                                             
+                            <foreignObject x="8" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="4">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">4</tspan>
+                            </text> 
                         </g>
                         <g class="sitio3" id="3" transform="translate(246.800000, 767.210000)">
                             <path d="M46.44,6.82 L46.44,48.18 C46.44,49.61 45.12,50.76 43.44,50.76 L2.94,50.76 C1.32,50.76 0,49.61 0,48.18 L0,6.82 C0,5.32 1.32,4.18 2.94,4.18 L43.44,4.18 C45.12,4.18 46.44,5.33 46.44,6.82 L46.44,6.82 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,50.88 L11.4,50.88 L11.4,53.73 C11.4,54.39 12.06,54.93 12.84,54.93 L51.78,54.93 C52.62,54.93 53.22,54.39 53.22,53.73 L53.22,50.87 L53.22,50.88 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M59.94,6.76 L59.94,48.18 C59.94,49.61 58.62,50.76 57,50.76 L49.5,50.76 C47.82,50.76 46.5,49.61 46.5,48.18 L46.5,6.76 C46.5,5.33 47.82,4.18 49.5,4.18 L57,4.18 C58.62,4.18 59.94,5.33 59.94,6.76 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M53.22,4.08 L11.4,4.08 L11.4,1.26 C11.4,0.56 12.06,0 12.84,0 L51.78,0 C52.62,0 53.22,0.55 53.22,1.26 L53.22,4.06 L53.22,4.08 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="23" y="34.48">3</tspan>
-                            </text>
+                                                                            
+                            <foreignObject x="8" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="3">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">3</tspan>
+                            </text> 
                         </g>
                         <g class="sitio2" id="2" transform="translate(0.000000, 498.090000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.83,4.16 16.5,4.16 L57,4.16 C58.63,4.16 59.95,5.33 59.95,6.76 L59.95,48.12 C59.95,49.6 58.63,50.76 57.01,50.76 L16.51,50.76 C14.84,50.76 13.51,49.6 13.51,48.12 L13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,4.06 L48.55,4.06 L48.55,1.2 C48.55,0.54 47.89,-5.68434189e-14 47.11,-5.68434189e-14 L8.18,-5.68434189e-14 C7.34,-5.68434189e-14 6.74,0.54 6.74,1.2 L6.74,4.06 L6.73,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.33,4.17 2.95,4.17 L10.45,4.17 C12.13,4.17 13.45,5.33 13.45,6.77 L13.45,48.17 C13.45,49.6 12.13,50.77 10.45,50.77 L2.95,50.77 C1.33,50.77 0.01,49.6 0.01,48.17 L0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,50.87 L48.55,50.87 L48.55,53.67 C48.55,54.39 47.89,54.94 47.11,54.94 L8.18,54.94 C7.34,54.94 6.74,54.39 6.74,53.67 L6.74,50.87 L6.73,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="26.8" y="34.6">2</tspan>
-                            </text>
+                                                                              
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="2">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">2</tspan>
+                            </text> 
                         </g>
                         <g class="sitio1" id="1" transform="translate(0.000000, 767.090000)">
                             <path d="M13.5,48.12 L13.5,6.76 C13.5,5.33 14.83,4.16 16.5,4.16 L57,4.16 C58.63,4.16 59.95,5.33 59.95,6.76 L59.95,48.12 C59.95,49.6 58.63,50.76 57.01,50.76 L16.51,50.76 C14.84,50.76 13.51,49.6 13.51,48.12 L13.5,48.12 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,4.06 L48.55,4.06 L48.55,1.2 C48.55,0.54 47.89,0 47.11,0 L8.18,0 C7.34,0 6.74,0.54 6.74,1.2 L6.74,4.06 L6.73,4.06 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
                             <path d="M0,48.17 L0,6.77 C0,5.33 1.33,4.17 2.95,4.17 L10.45,4.17 C12.13,4.17 13.45,5.33 13.45,6.77 L13.45,48.17 C13.45,49.6 12.13,50.77 10.45,50.77 L2.95,50.77 C1.33,50.77 0.01,49.6 0.01,48.17 L0,48.17 Z" id="Path" stroke="#000000" stroke-width="2" fill="#BBBBBB" fill-rule="nonzero"></path>
                             <path d="M6.73,50.87 L48.55,50.87 L48.55,53.67 C48.55,54.39 47.89,54.94 47.11,54.94 L8.18,54.94 C7.34,54.94 6.74,54.39 6.74,53.67 L6.74,50.87 L6.73,50.87 Z" id="Path" stroke="#000000" stroke-width="2" fill="#000000" fill-rule="nonzero"></path>
-                            <text font-family="Helvetica" font-size="21" font-weight="normal" fill="#000000">
-                                <tspan x="26.8" y="34.6">1</tspan>
-                            </text>
+                                                                              
+                            <foreignObject x="20" y="18" width="40" height="20">
+                                <body xmlns="http://www.w3.org/1999/xhtml">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" name="sitio" value="1">
+                                        </div>                    
+                                </body>
+                            </foreignObject>
+
+                            <text font-family="Helvetica" font-size="30" font-weight="normal" fill="#000000">
+                                <tspan x="17" y="87">1</tspan>
+                            </text> 
                         </g>
                     </g>
         
         
-                    <g class="mesas" id="mesas" transform="translate(0.510000, 1.250000)" fill-rule="nonzero">
+                   <g class="mesas" id="mesas" transform="translate(0.510000, 1.250000)" fill-rule="nonzero">
                         <polygon id="Path" stroke="#000000" stroke-width="2" fill="#DDDDDD" points="235.13 705 315.13 705 315.13 965 235.13 965"></polygon>
                         <polygon id="Path" stroke="#000000" stroke-width="2" fill="#DDDDDD" points="1746.13 705 1825.13 705 1825.13 967 1746.13 967"></polygon>
                         <polygon id="Path" stroke="#000000" stroke-width="2" fill="#DDDDDD" points="1746.13 443 1825.13 443 1825.13 705 1746.13 705"></polygon>
