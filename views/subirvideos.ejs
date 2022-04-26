@@ -21,13 +21,19 @@
         function validar(){
             var val_aula = true;
             var val_sitio = false;
+            var val_fecha = true;
             var valido = true;
             var i;
             var aula = document.getElementById("aula").value;
+            var fecha = document.getElementById("fecha").value;
   
             if(aula == "none")
                 val_aula = false;
-                
+            
+            if(fecha == "")
+                val_fecha = false; 
+            
+                     
               for(i = 0; i<document.fsitios.sitio.length; i++){
                 if(document.fsitios.sitio[i].checked){
                     val_sitio = true;
@@ -35,8 +41,17 @@
                   }
                 }
 
-              if(!val_sitio && !val_aula){
+              if(!val_sitio && !val_aula && !val_fecha){
+                alert("Elija el Aula, el Sitio y la Fecha!");
+                valido = false;
+              }else if(!val_sitio && !val_aula){
                 alert("Elija el Aula y el Sitio!");
+                valido = false;
+              }else if(!val_aula && !val_fecha){
+                alert("Elija el Aula y la Fecha!");
+                valido = false;
+              }else if(!val_sitio && !val_fecha){
+                alert("Elija el Sitio y la Fecha!");
                 valido = false;
               }else if(!val_aula){
                 alert("Elija el Aula!");
@@ -44,12 +59,17 @@
               }else if(!val_sitio){
                 alert("Elija el Sitio!");
                 valido = false;
+              }else if(!val_fecha){
+                alert("Elija la Fecha!");
+                valido = false;
               }
+
 
             return valido;
 
         }
   
+
     </script>
 
 </head>
@@ -111,21 +131,52 @@
     <div class="fondo">
         <div class="contenedor">
             <h2 class="titulo" style="text-align: center;">Reserva tu sitio</h2>
-            
-            
                 <div style="width: 50;">
-                    <br> 
-                    <h3 style="text-align: center;">Elige el aula y el sitio:</h3> <!--- class = "descripcion" -->
+                    
+                    <h3 style="text-align: center;">Elige aula, sitio, día y hora:</h3> <!--- class = "descripcion" -->
 
-                    <form action="/subirvideos" name="fsitios" onsubmit="return validar()" method="post" enctype="multipart/form-data">
-                     <center>
-                      <select name="aula" id="aula" style="width: 125px;">
-                        <option value="none">-</option>
-                        <option value="1">Aula 1</option>
-                        <option value="2">Aula 2</option>
-                        <option value="3">Aula 3</option>
-                      </select> <br><br>
-                     </center>
+                    <!--  /subirvideos-->  <!--  https://labtel.ehu.eus/cgi-bin/echo.py -->
+                    <form action="https://labtel.ehu.eus/cgi-bin/echo.py" name="fsitios" onsubmit="return validar()" method="post" enctype="multipart/form-data">
+
+                        <center>
+                        <table>
+                            <td>
+                                    <select name="aula" id="aula" style="width: 125px;">
+                                      <option value="none">-</option>
+                                      <option value="1">Aula 1</option>
+                                      <option value="2">Aula 2</option>
+                                      <option value="3">Aula 3</option>
+                                    </select>                                
+                            </td>
+
+                            <td>&nbsp &nbsp</td>   <!-- &nbsp NON BREAKING SPACE -->
+
+                            <!-- <td>
+                
+                                    <input type="date" id="start" name="fecha"  min="2018-01-01" max="2030-12-31">  
+                            </td>   
+
+                            <td>&nbsp &nbsp</td>
+                            
+                            <td>
+                               
+                                <input type="time" name="hora"  min="00:00" max="23:59" >  
+                            </td>   -->
+
+                            <td>&nbsp &nbsp</td>  
+
+                            <td>
+                                <!-- <label for="start">Escoja la hora:</label><br> -->
+                                <input type="datetime-local" name="fecha" id="fecha"  >   <!--  value="1999-01-01T13:59"  -->
+                            </td>
+                        </table><br>
+                          </center>
+
+
+
+
+                    
+              
                       
 <center>
     <center>
