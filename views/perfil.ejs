@@ -35,7 +35,7 @@
 									<a href="subirvideos" class="nav-link">Reserva tu sitio</a>
 								</li>
 								<li class="nav-item">
-									<a href="videos" class="nav-link">Bibliotecas</a>
+									<a href="videos" class="nav-link">Reservas</a>
 								</li>
 							    <li class="nav-item">
 								    <a href="nosotros" class="nav-link">Sobre Nosotros</a>
@@ -67,7 +67,10 @@
                 <p class="descripcion">
                    Desde ahora podrás reservar tu sitio de estudio desde cualquier lugar y a cualquier hora gracias a TOKI!!
                 </p>
-				
+				<% for(var i = 0; i < reservas.length; i++) { %>
+					<li><%= reservas[i].sitio%></li>
+					
+				<% } %>
 				
 
             </div>

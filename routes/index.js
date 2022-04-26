@@ -50,7 +50,7 @@ router.post('/subirvideos', async(req, res) => {
     
   
 })
-   // res.redirect('subirvideos');
+    res.redirect('nosotros');
 });
 
 
@@ -64,8 +64,8 @@ router.get('/nosotros', (req, res, next) => { //le enviamos a una ventana con el
     res.render('nosotros');
 });
 
-router.get('/videos', (req, res, next) => { //le enviamos a una ventana con el get
-    res.render('videos');
+router.get('/reservas', (req, res, next) => { //le enviamos a una ventana con el get
+    res.render('reservas');
 });
 
 router.get('/index', (req, res, next) => { //le enviamos a una ventana con el get
@@ -94,10 +94,10 @@ router.post('/signin', passport.authenticate('local-signin', { //el servidor esc
 
 
 router.get('/perfil', isAuthenticated, async (req, res, next) => {
-    //const videos = await Video.find({user: req.user.id}).lean().sort({date: 'desc'});
+    const reservas = await Res.find({aula: '1'}).lean().sort({date: 'desc'});
 
-    //res.render('perfil', {videos});
-    res.render('perfil');
+    res.render('perfil', {reservas});
+
 });
 
 
