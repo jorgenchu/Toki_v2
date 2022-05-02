@@ -68,7 +68,7 @@
                    Desde ahora podrás reservar tu sitio de estudio desde cualquier lugar y a cualquier hora gracias a TOKI!!
                 </p>
 				<% for(var i = 0; i < reservas.length; i++) { %>
-					<li><%= reservas[i].sitio%></li>
+					<li><%= reservas[i].sitio% && reservas[i].date></li>
 					
 				<% } %>
 				

@@ -4,6 +4,7 @@ const user = require('./user');
 const Schema = mongoose.Schema
 
 const ReservaSchema = new Schema({
+    id: Number,
     aula: Number,
     sitio: Number,
     user: String,
