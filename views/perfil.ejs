@@ -35,7 +35,7 @@
 									<a href="subirvideos" class="nav-link">Reserva tu sitio</a>
 								</li>
 								<li class="nav-item">
-									<a href="videos" class="nav-link">Reservas</a>
+									<a href="reservas" class="nav-link">Reservas</a>
 								</li>
 							    <li class="nav-item">
 								    <a href="nosotros" class="nav-link">Sobre Nosotros</a>
@@ -48,8 +48,6 @@
 									<% } %></a>
                                     <div class="dropdown-menu">  
 										<a class="dropdown-item"  href ="logout">Cerrar Sesión</a>
-						
-
                                     </a>
 									</div>
 							    </li>
@@ -60,17 +58,23 @@
 					</nav>
 			</div>
 		</header>
-
         <div class="fondo5">
             <div class="contenedor">
                 <h2 class="titulo">Bienvenido <%- user.nickname %></h2>
                 <p class="descripcion">
                    Desde ahora podrás reservar tu sitio de estudio desde cualquier lugar y a cualquier hora gracias a TOKI!!
+				   <H3>TUS RESERVAS:</H3>
+				   <% for(var i = 0; i < reservas.length; i++) { %>
+					<li>Sitio: <%= reservas[i].sitio%> y Aula:<%=reservas[i].aula%>, Fecha: <%=reservas[i].
+						reserved_at
+						%></li>	
+					<% } %>
+				<canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas>
+				<div class="konvajs-content" role="presentation" style="position: relative; user-select: none; width: 612px; height: 448px;"><canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas></div>
+				<script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
                 </p>
-				<% for(var i = 0; i < reservas.length; i++) { %>
-					<li><%= reservas[i].sitio% && reservas[i].date%></li>
-					
-				<% } %>
+				
+			
 				
 
             </div>

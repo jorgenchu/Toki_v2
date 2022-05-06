@@ -10,6 +10,7 @@ const Reserva = require('../models/reserva');
 const User = require('../models/user');
 const Res = require('../models/reserva');
 const { db } = require('../models/user');
+const user = require('../models/user');
 
 router.get('/', (req, res, next) => {
     res.render('index'); //como ya he cofigura do que use ejs y donde esta solo revisa el archivo index.ejs
@@ -25,7 +26,7 @@ router.get('/subirvideos',  (req, res, next) => { //le enviamos a una ventana co
     res.render('subirvideos');
   });
 
-router.post('/subirvideos', async(req, res) => {
+router.post('/subirvideos', isAuthenticated, async(req, res) => {
     console.log('Realizando reserva')
     var place = req.body.sitio;
     var room = req.body.aula;
@@ -40,7 +41,7 @@ router.post('/subirvideos', async(req, res) => {
         let newReserva = new Reserva()
         newReserva.aula = req.body.aula; //lo que envias del formulario
         newReserva.sitio = req.body.sitio;
-        //newReserva.user = req.user.id
+        newReserva.user = req.user.id
         newReserva.save((err, reservaStored) => {
             if (err) res.status(500).send({message: `Error al salvar en la BD: ${err}`})
     
@@ -72,6 +73,9 @@ router.get('/index', (req, res, next) => { //le enviamos a una ventana con el ge
     res.render('index');
 });
 
+router.get('/reservaselim', isAuthenticated, async (req, res) => {
+    res.redirect('reservaselim');
+});
 
 
 
@@ -94,10 +98,16 @@ router.post('/signin', passport.authenticate('local-signin', { //el servidor esc
 
 
 router.get('/perfil', isAuthenticated, async (req, res, next) => {
-    const reservas = await Res.find({aula: '1'}).lean().sort({date: 'desc'});
-
+    
+    const id = req.user.id; 
+    console.log(id);
+    const reservas = await Res.find({user: req.user.id}).lean().sort({date: 'desc'});
     res.render('perfil', {reservas});
 
+});
+
+router.get('/reserva/1', isAuthenticated, async (req, res) => {
+    res.redirect('/reservas');
 });
 
 

@@ -24,7 +24,8 @@
                     <button class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                        <div class="collapse navbar-collapse" id="menu">
+                    
+                    <div class="collapse navbar-collapse" id="menu">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
                                 <a href="index" class="nav-link">Inicio</a>
@@ -33,7 +34,7 @@
                                 <a href="subirvideos" class="nav-link">Reserva tu sitio</a>
                             </li>
                             <li class="nav-item">
-                                <a href="reservas" class="nav-link active">Reservas</a>
+                                <a href="videos" class="nav-link active">Reservas</a>
                             </li>
 							</li><li class="nav-item">
 								<a href="nosotros" class="nav-link">Sobre Nosotros</a>
@@ -49,6 +50,9 @@
 				
 								</div>
 								</li>
+
+
+
 							<% } else { %>
 								<li class="nav-item">
 									<a href="perfil" class="nav-link">	Mi Perfil </a>
@@ -63,28 +67,22 @@
     </header>
 		<div class="fondo3">
 			<div class="contenedor">
-				<h2 class="titulo">Tus reservas</h2>
+				<h3 class="titulo">Tus reservas</h3>
 				<p class="descripcion">
-				Consulta tus reservas
-					
-				<canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas>
-				<div class="konvajs-content" role="presentation" style="position: relative; user-select: none; width: 612px; height: 448px;"><canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas></div>
-				<script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+					Busca las mejores bibliotecas para estudiar
 				<div></div>
-				<a href="subirvideos"><button role="button" class="boton"><i class="fas fa-map-marker-alt"></i>Reserva tu sitio</button></a>
-				<a href="reservaselim"><button role="button" class="boton"><i class="fas fa-info-circle"></i>Eliminar reservas</button></a>
-
-			
-
+				<a href="subirvideos"><button role="button" class="boton"><i class="fas fa-play"></i>Reserva tu sitio</button></a>
 			</div>
 		</div>
 		<div class="peliculas-recomendadas contenedor">
 			<div class="contenedor-titulo-controles">
-				<h3>Bibliotecas recomendadas</h3>
+				<h3>Últimos vídeos</h3>
 				<div class="indicadores"></div>
 			</div>
 
 			<div class="contenedor-principal">
+				<button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+
 				<div class="contenedor-carousel">
 					<div class="carousel">
 						<div class="pelicula">
