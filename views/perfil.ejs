@@ -64,11 +64,13 @@
                 <p class="descripcion">
                    Desde ahora podrás reservar tu sitio de estudio desde cualquier lugar y a cualquier hora gracias a TOKI!!
 				   <H3>TUS RESERVAS:</H3>
+				   <ol>
 				   <% for(var i = 0; i < reservas.length; i++) { %>
-					<li>Sitio: <%= reservas[i].sitio%> y Aula:<%=reservas[i].aula%>, Fecha: <%=reservas[i].
+					<li>Sitio: <%= reservas[i].sitio%> y Aula: <%=reservas[i].aula%>, Fecha: <%=reservas[i].
 						reserved_at
 						%></li>	
 					<% } %>
+				</ol>
 				<canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas>
 				<div class="konvajs-content" role="presentation" style="position: relative; user-select: none; width: 612px; height: 448px;"><canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas></div>
 				<script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>

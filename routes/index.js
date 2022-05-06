@@ -21,12 +21,12 @@ router.get('/', (req, res, next) => {
   //  res.render('subirvideos');
 //});
 
-router.get('/subirvideos',  (req, res, next) => { //le enviamos a una ventana con el get
+router.get('/subirvideos',  isAuthenticated, async(req, res, next) => { //le enviamos a una ventana con el get
     
     res.render('subirvideos');
   });
 
-router.post('/subirvideos', isAuthenticated, async(req, res) => {
+router.post('/subirvideos', (req, res) => {
     console.log('Realizando reserva')
     var place = req.body.sitio;
     var room = req.body.aula;
@@ -65,7 +65,7 @@ router.get('/nosotros', (req, res, next) => { //le enviamos a una ventana con el
     res.render('nosotros');
 });
 
-router.get('/reservas', (req, res, next) => { //le enviamos a una ventana con el get
+router.get('/reservas', isAuthenticated, async (req, res, next) => { //le enviamos a una ventana con el get
     res.render('reservas');
 });
 
@@ -74,7 +74,7 @@ router.get('/index', (req, res, next) => { //le enviamos a una ventana con el ge
 });
 
 router.get('/reservaselim', isAuthenticated, async (req, res) => {
-    res.redirect('reservaselim');
+    res.render('reservalim');
 });
 
 
@@ -100,7 +100,6 @@ router.post('/signin', passport.authenticate('local-signin', { //el servidor esc
 router.get('/perfil', isAuthenticated, async (req, res, next) => {
     
     const id = req.user.id; 
-    console.log(id);
     const reservas = await Res.find({user: req.user.id}).lean().sort({date: 'desc'});
     res.render('perfil', {reservas});
 
