@@ -41,7 +41,8 @@ router.post('/subirvideos', (req, res) => {
         let newReserva = new Reserva()
         newReserva.aula = req.body.aula; //lo que envias del formulario
         newReserva.sitio = req.body.sitio;
-        newReserva.user = req.user.id
+        newReserva.user = req.user.id;
+        newReserva.fecha = req.body.fecha;
         newReserva.save((err, reservaStored) => {
             if (err) res.status(500).send({message: `Error al salvar en la BD: ${err}`})
     
@@ -51,7 +52,7 @@ router.post('/subirvideos', (req, res) => {
     
   
 })
-    res.redirect('nosotros');
+    res.redirect('perfil');
 });
 
 
@@ -66,7 +67,9 @@ router.get('/nosotros', (req, res, next) => { //le enviamos a una ventana con el
 });
 
 router.get('/reservas', isAuthenticated, async (req, res, next) => { //le enviamos a una ventana con el get
-    res.render('reservas');
+    const id = req.user.id; 
+    const reservas = await Res.find({user: req.user.id}).lean().sort({date: 'desc'});
+    res.render('reservas', {reservas});
 });
 
 router.get('/index', (req, res, next) => { //le enviamos a una ventana con el get
