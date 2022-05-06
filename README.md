@@ -35,7 +35,6 @@ Toki is a collaborative project carried out by students at the Bilbao School of 
 ---
 
 - [Descripción y contexto](#descripción-y-contexto)
-- [Guía de usuario](#guía-de-usuario)
 - [Guía de instalación](#guía-de-instalación)
 - [Autor/es](#autores)
 
@@ -43,9 +42,6 @@ Toki is a collaborative project carried out by students at the Bilbao School of 
 ---
 TOKI es una web que permite realizar la reserva anticipada de un puesto de estudio o de trabajo. Permite escoger fácilmente desde un dispositivo con acceso a Internet el sitio que más convenga al usuario. Además, en caso de necesitar realizar trabajos en grupo, la web permite hacer una reserva hasta un máximo de 6 puestos, teniendo que identificar a las personas a la hora de realizar la reserva.
 
-## Guía de usuario
----
-Explica los pasos básicos sobre cómo usar la herramienta digital. Es una buena sección para mostrar capturas de pantalla o gifs que ayuden a entender la herramienta digital.
  	
 ## Guía de instalación
 ---
@@ -85,13 +81,6 @@ Las dependencias necesarias para el funcionamiento son:
     npm install express
 
 
-
-
-## Código de conducta 
----
-El código de conducta establece las normas sociales, reglas y responsabilidades que los individuos y organizaciones deben seguir al interactuar de alguna manera con la herramienta digital o su comunidad. Es una buena práctica para crear un ambiente de respeto e inclusión en las contribuciones al proyecto. 
-
-La plataforma Github premia y ayuda a los repositorios dispongan de este archivo. Al crear CODE_OF_CONDUCT.md puedes empezar desde una plantilla sugerida por ellos. Puedes leer más sobre cómo crear un archivo de Código de Conducta (aquí)[https://help.github.com/articles/adding-a-code-of-conduct-to-your-project/]
 
 ## Autor/es
 ---
