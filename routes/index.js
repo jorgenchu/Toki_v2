@@ -11,6 +11,7 @@ const User = require('../models/user');
 const Res = require('../models/reserva');
 const { db } = require('../models/user');
 const user = require('../models/user');
+const reserva = require('../models/reserva');
 
 router.get('/', (req, res, next) => {
     res.render('index'); //como ya he cofigura do que use ejs y donde esta solo revisa el archivo index.ejs
@@ -37,6 +38,7 @@ router.post('/subirvideos',async (req, res, done) => {
       if (rese != null) {
         console.log('Sitio reservado')
         res.send("SITIO RESERVADO");
+        return(req.flash('signinMessage', 'Sitio reservado'));
 
     } else {
         let newReserva = new Reserva()
@@ -78,7 +80,9 @@ router.get('/index', (req, res, next) => { //le enviamos a una ventana con el ge
 });
 
 router.get('/reservaselim', isAuthenticated, async (req, res) => {
-    res.render('reservalim');
+    const id = req.user.id; 
+    const reservas = await Res.find({user: req.user.id}).lean().sort({date: 'desc'});
+    res.render('reservaselim', {reservas});
 });
 
 
@@ -109,11 +113,16 @@ router.get('/perfil', isAuthenticated, async (req, res, next) => {
 
 });
 
-router.get('/reserva/1', isAuthenticated, async (req, res) => {
-    res.redirect('/reservas');
+router.get('/reserva', async (req, res) => {
+    const reserv = await Res.find().sort('-_id');
+    res.json(reserv);
 });
 
 
+router.delete('/reserva/:id', async (req, res) => {
+    const reserv = await Res.findByIdAndDelete(req.params.id);
+    res.json({message: 'Book Deleted'});
+});
 
 
 router.get('/logout', (req, res, next) => {
