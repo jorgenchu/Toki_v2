@@ -26,7 +26,7 @@ router.get('/subirvideos',  isAuthenticated, async(req, res, next) => { //le env
     res.render('subirvideos');
   });
 
-router.post('/subirvideos', (req, res) => {
+router.post('/subirvideos',async (req, res, done) => {
     console.log('Realizando reserva')
     var place = req.body.sitio;
     var room = req.body.aula;
@@ -36,7 +36,8 @@ router.post('/subirvideos', (req, res) => {
       console.log(rese); 
       if (rese != null) {
         console.log('Sitio reservado')
-       // return done(null, false, req.flash('signupMessage', 'El sitio esta reservado'));
+        res.send("SITIO RESERVADO");
+
     } else {
         let newReserva = new Reserva()
         newReserva.aula = req.body.aula; //lo que envias del formulario
@@ -45,14 +46,14 @@ router.post('/subirvideos', (req, res) => {
         newReserva.fecha = req.body.fecha;
         newReserva.save((err, reservaStored) => {
             if (err) res.status(500).send({message: `Error al salvar en la BD: ${err}`})
-    
-            res.status(200).send({product: reservaStored})
+            //res.status(200).send({product: reservaStored})
         })
+       
     }
-    
+     res.redirect("reservas");   
   
 })
-    res.redirect('perfil');
+    
 });
 
 

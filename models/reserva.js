@@ -8,7 +8,7 @@ const ReservaSchema = new Schema({
     aula: Number,
     sitio: Number,
     user: String,
-    fecha: { type: Date, default: Date.now() }
+    fecha: { type: Date }
 });
 
 module.exports = mongoose.model('Reserva', ReservaSchema)
