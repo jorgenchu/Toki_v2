@@ -8,6 +8,7 @@ const ReservaSchema = new Schema({
     aula: Number,
     sitio: Number,
     user: String,
+    corfirm: {type: String, default: 'NO'},
     fecha: { type: Date }
 });
 

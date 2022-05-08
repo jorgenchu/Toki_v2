@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+		<link rel="stylesheet" href="css/estilos.css">
+		<script src="js/jquery-3.5.1.slim.min.js"></script>
+		<script src="popper.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<title>Sobre Nosotros</title>
+		<link rel="icon" type="image/png" href="img/favicon.png" >
+	</head>
+	
+	<body>
+		<header>
+			<div class="contenedor">
+				<a href="index"><img src="img/logo.png" alt=""></a>
+				
+					<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark">
+						
+						<button class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="menu">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item">
+									<a href="index" class="nav-link">Inicio</a>
+								</li>
+								<li class="nav-item">
+									<a href="subirvideos" class="nav-link">Reserva tu sitio</a>
+								</li>
+								<li class="nav-item">
+									<a href="reservas" class="nav-link">Reservas</a>
+								</li>
+							</li><li class="nav-item">
+								<a href="nosotros" class="nav-link active">Sobre Nosotros</a>
+							</li>
+							
+							<% if (user) { %> 
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="desplegable" href="perfil"><%- user.nickname %> </a>
+							
+								<div class="dropdown-menu">  
+									<a class="dropdown-item"  href ="perfil">Mi perfil</a>
+									<a class="dropdown-item"  href ="logout">Cerrar Sesión</a>
+				
+								</div>
+								</li>
+
+
+
+							<% } else { %>
+								<li class="nav-item">
+									<a href="perfil" class="nav-link">	Mi Perfil </a>
+								</li>
+							<% } %>
+				
+							</ul>		
+						</div>
+					
+					</nav>
+			</div>
+		</header>
+
+        <div class="fondo4">
+            <div class="contenedor">
+                <h2 class="titulo">Sobre Nosotros</h2>
+                <p class="descripcion">
+                   Somos un grupo de estudiantes de la UPV/EHU que ha creado un innovador sistema de gestión de los sitios de estudio.
+                
+
+				   <canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas>
+
+
+
+
+				   <div class="konvajs-content" role="presentation" style="position: relative; user-select: none; width: 612px; height: 448px;"><canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas></div>
+				   
+				   
+				   <script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+			</div>
+
+    </body>
+</html>
+        

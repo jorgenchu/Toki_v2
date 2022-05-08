@@ -31,14 +31,15 @@ router.post('/subirvideos',async (req, res, done) => {
     console.log('Realizando reserva')
     var place = req.body.sitio;
     var room = req.body.aula;
-    Res.findOne({aula : room, sitio : place}, function (err, rese) {
+    var date = req.body.fecha;
+    Res.findOne({aula : room, sitio : place, fecha : date}, function (err, rese) {
       if (err) return console.error(err);
        // will return a json array of all the documents in the collection
       console.log(rese); 
       if (rese != null) {
         console.log('Sitio reservado')
-        res.send("SITIO RESERVADO");
-        return(req.flash('signinMessage', 'Sitio reservado'));
+        res.send("SITIO RESERVADO")
+        return(req.flash('resMensagge', 'Sitio reservado'));
 
     } else {
         let newReserva = new Reserva()
@@ -67,6 +68,14 @@ router.get('/signup', (req, res, next) => { //le enviamos a una ventana con el g
 
 router.get('/nosotros', (req, res, next) => { //le enviamos a una ventana con el get
     res.render('nosotros');
+});
+
+router.get('/qr/:id', (req, res, next) => { //le enviamos a una ventana con el get
+    res.render('qr');
+    const id = req.user.id; 
+    const reservas = await Res.find({reserva: req.user.id, });
+    res.render('qr', {reservas});
+
 });
 
 router.get('/reservas', isAuthenticated, async (req, res, next) => { //le enviamos a una ventana con el get
@@ -110,7 +119,6 @@ router.get('/perfil', isAuthenticated, async (req, res, next) => {
     const id = req.user.id; 
     const reservas = await Res.find({user: req.user.id}).lean().sort({date: 'desc'});
     res.render('perfil', {reservas});
-
 });
 
 router.get('/reserva', async (req, res) => {
@@ -121,7 +129,7 @@ router.get('/reserva', async (req, res) => {
 
 router.delete('/reserva/:id', async (req, res) => {
     const reserv = await Res.findByIdAndDelete(req.params.id);
-    res.json({message: 'Book Deleted'});
+    res.json({message: 'Reserva deleted'});
 });
 
 
