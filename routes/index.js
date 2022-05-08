@@ -70,7 +70,7 @@ router.get('/nosotros', (req, res, next) => { //le enviamos a una ventana con el
     res.render('nosotros');
 });
 
-router.get('/qr/:id', (req, res, next) => { //le enviamos a una ventana con el get
+router.get('/qr/:id', isAuthenticated, async (req, res, next) => { //le enviamos a una ventana con el get
     res.render('qr');
     const id = req.user.id; 
     const reservas = await Res.find({reserva: req.user.id, });
