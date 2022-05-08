@@ -9,9 +9,10 @@ const mongoose = require('mongoose')
 const Reserva = require('../models/reserva');
 const User = require('../models/user');
 const Res = require('../models/reserva');
-const { db } = require('../models/user');
+//const { db } = require('../models/user');
 const user = require('../models/user');
 const reserva = require('../models/reserva');
+const querystring = require('querystring');
 
 router.get('/', (req, res, next) => {
     res.render('index'); //como ya he cofigura do que use ejs y donde esta solo revisa el archivo index.ejs
@@ -39,7 +40,7 @@ router.post('/subirvideos',async (req, res, done) => {
       if (rese != null) {
         console.log('Sitio reservado')
         res.send("SITIO RESERVADO")
-        return(req.flash('resMensagge', 'Sitio reservado'));
+        req.flash('resMensagge', 'Sitio reservado');
 
     } else {
         let newReserva = new Reserva()
@@ -70,8 +71,10 @@ router.get('/nosotros', (req, res, next) => { //le enviamos a una ventana con el
     res.render('nosotros');
 });
 
-router.get('/qr', async (req, res, next) => { //le enviamos a una ventana con el get
-    const id = req.params.id; 
+router.get('/qr',isAuthenticated, async (req, res, next) => { //le enviamos a una ventana con el get
+    let id = req.query.id;
+    
+
     const reservas = await Res.find({reserva: req.params.id, });
     console.log(reservas)
     res.render('qr', {reservas});

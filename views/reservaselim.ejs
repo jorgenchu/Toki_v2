@@ -17,7 +17,7 @@
 <body>
     <header>
         <div class="contenedor">
-            <a href="index"><img src="img/logo.png" alt=""></a>
+            <a href="index.ejs"><img src="img/logo.png" alt=""></a>
             
                 <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark">
                     
@@ -68,14 +68,12 @@
 				Consulta tus reservas
 				<H3>TUS RESERVAS:</H3>
 				<ol>
-					<a href=""></a>
-				<% for(var i = 0; i < reservas.length; i++) { %>
-				 <li><a href="/subirvideos" target="_blank">Sitio: <%= reservas[i].sitio%> y Aula: <%=reservas[i].aula%>, Fecha: <%=reservas[i].fecha
-					%></a></li>	
-				 <% } %>
-				<canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas>
-				<div class="konvajs-content" role="presentation" style="position: relative; user-select: none; width: 612px; height: 448px;"><canvas width="1224" height="896" style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 612px; height: 448px; display: block;"></canvas></div>
-				<script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+				
+					<% for(var i = 0; i < reservas.length; i++) { %>
+						<li><a href="/reserva/reservas[i].id" target="_blank">Sitio: <%= reservas[i].sitio%> y Aula: <%=reservas[i].aula%>, Fecha: <%=reservas[i].fecha
+						   %></a></li>	
+						<% } %>
+				
 				<div></div>
 				<a href="subirvideos"><button role="button" class="boton"><i class="fas fa-map-marker-alt"></i>Reserva tu sitio</button></a>
 				<a href="reservaselim"><button role="button" class="boton"><i class="fas fa-info-circle"></i>Eliminar reservas</button></a>
