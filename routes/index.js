@@ -70,10 +70,10 @@ router.get('/nosotros', (req, res, next) => { //le enviamos a una ventana con el
     res.render('nosotros');
 });
 
-router.get('/qr/:id', isAuthenticated, async (req, res, next) => { //le enviamos a una ventana con el get
-    res.render('qr');
-    const id = req.user.id; 
-    const reservas = await Res.find({reserva: req.user.id, });
+router.get('/qr', async (req, res, next) => { //le enviamos a una ventana con el get
+    const id = req.params.id; 
+    const reservas = await Res.find({reserva: req.params.id, });
+    console.log(reservas)
     res.render('qr', {reservas});
 
 });
